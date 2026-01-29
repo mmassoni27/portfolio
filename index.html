@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathias Massoni | Portfolio BTS SIO</title>
+    <style>
+        :root {
+            --grad-blue: linear-gradient(90deg, #0d0d0d 0%, #1a237e 50%, #3949ab 100%);
+            --orange-tech: #ff6600; 
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --bg-body: #e9ecef; /* FOND GRIS CLAIR */
+            --bg-section: #ffffff; /* CARRÉS BLANCS */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            background: var(--grad-blue);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 1000;
+            border-bottom: 3px solid var(--orange-tech);
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--orange-tech); }
+
+        header#accueil {
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: var(--grad-blue);
+            color: white;
+            padding-top: 50px;
+        }
+
+        header h1 { font-size: 3rem; text-transform: uppercase; }
+        header h1 span { color: var(--orange-tech); }
+        header p { font-family: monospace; letter-spacing: 2px; margin-top: 10px; color: var(--orange-tech); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        section { 
+            padding: 80px 40px; 
+            background: var(--bg-section); 
+            margin-bottom: 40px; 
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #1a237e;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--orange-tech);
+            padding-left: 20px;
+            text-transform: uppercase;
+        }
+
+        .profil-box {
+            display: flex; gap: 40px; align-items: center; flex-wrap: wrap;
+        }
+
+        .photo-cadre {
+            width: 200px; height: 260px; border: 4px solid var(--orange-tech);
+            border-radius: 10px; overflow: hidden; background: #eee;
+        }
+
+        .photo-cadre img { width: 100%; height: 100%; object-fit: cover; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+
+        .card {
+            padding: 25px; border: 1px solid #eee; border-radius: 8px;
+            background: #fafafa; transition: 0.3s;
+        }
+
+        .card:hover { border-color: var(--orange-tech); transform: translateY(-5px); }
+        .card h3 { color: #3949ab; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        
+        ul { list-style: none; }
+        ul li { margin-bottom: 8px; padding-left: 15px; position: relative; }
+        ul li::before { content: "•"; color: var(--orange-tech); position: absolute; left: 0; }
+
+        /* ALIGNEMENT LOGOS VERTICAL */
+        .certif-container {
+            display: flex;
+            flex-direction: column; 
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .excel-box, .html-box, .ia-box {
+            display: flex;
+            align-items: center; 
+            gap: 10px;
+        }
+
+        .excel-box a, .html-box a, .ia-box a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .excel-box a:hover, .html-box a:hover, .ia-box a:hover { transform: scale(1.1); }
+        .excel-box span, .html-box span, .ia-box span { font-size: 0.85rem; font-weight: bold; }
+        .excel-box span { color: #1d6f42; }
+        .html-box span { color: #e34f26; }
+        .ia-box span { color: #007bff; }
+
+        .btn-action {
+            display: inline-block; background: var(--orange-tech); color: white;
+            padding: 12px 25px; text-decoration: none; font-weight: bold;
+            border-radius: 5px; margin-top: 20px; transition: 0.3s;
+        }
+        .btn-action:hover { background: #1a237e; }
+
+        /* CONTACT STYLE */
+        .contact-info { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+        .contact-item { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; }
+
+        footer { text-align: center; padding: 40px; color: #666; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#profil">Profil</a>
+        <a href="#competences">Compétences</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#veille">Veille</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header id="accueil">
+        <h1>Mathias <span>Massoni</span></h1>
+        <p>>_ ÉTUDIANT BTS SIO SLAM</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="profil">
+            <h2>01. Profil Professionnel</h2>
+            <div class="profil-box">
+                <div class="photo-cadre">
+                    <img src="ma_photo.jpg" alt="Mathias Massoni">
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <p>Je suis un étudiant ayant obtenu le baccalauréat général (mention assez bien) avec les spécialités SES et Anglais.</p>
+                    <p style="margin-top: 10px;">Actuellement en <strong>BTS SIO option SLAM</strong> au lycée Saint Michel à Annecy.</p>
+                    <a href="CV_Mathias_Massoni.pdf" target="_blank" class="btn-action">Télécharger mon CV (PDF)</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="competences">
+            <h2>02. Mes Compétences</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Développement</h3>
+                    <ul>
+                        <li>HTML, PHP, SQL</li>
+                        <li>C, C++, Algorithmes</li>
+                        <li>Création de sites fluides</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Certifications</h3>
+                    <div class="certif-container">
+                        <div class="excel-box">
+                            <a href="https://openclassrooms.com/fr/courses/7168321-maitrisez-les-fondamentaux-dexcel" target="_blank" title="Certification Excel OpenClassrooms">
+                                <img src="excel.jpg" alt="Logo Excel" width="35">
+                            </a>
+                            <span>Certif EXCEL</span>
+                        </div>
+
+                        <div class="html-box">
+                            <a href="https://www.netacad.com/courses/html-essentials" target="_blank" title="Certification HTML">
+                                <img src="HTML.jpg" alt="Logo HTML" width="35">
+                            </a>
+                            <span>Certif HTML</span>
+                        </div>
+
+                        <div class="ia-box">
+                            <a href="https://www.fun-mooc.fr/fr/cours/a-la-recherche-de-lintelligence-artificielle" target="_blank" title="Certification IA">
+                                <img src="ia.jpg" alt="Logo IA" width="35">
+                            </a>
+                            <span>Certif IA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Autres Atouts</h3>
+                    <ul>
+                        <li>Anglais : Courant</li>
+                        <li>Espagnol : Niveau B2</li>
+                        <li>Certification PIX</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="realisations">
+            <h2>03. Mes Réalisations</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Expériences</h3>
+                    
+                </div>
+                <div class="card">
+                    <h3>Projets Scolaires</h3>
+                    <p>Réalisation de projets d'AP et maîtrise des bases de données pour l'épreuve E5.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="veille">
+            <h2>04. Veille Technologique</h2>
+            <div class="card" style="border-top: 4px solid var(--orange-tech);">
+                <p>Mise à jour régulière des nouveautés du secteur informatique. Suivi des innovations en les datant et les résumant brièvement.</p>
+                <a href="veille.html" class="btn-action" style="background: #1a237e;">Accéder à ma veille complète ↗</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>05. Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">📍 74540 Hery sur Alby</div>
+                <div class="contact-item">📧 mmassoni27@gmail.com</div>
+                <div class="contact-item">📞 06 09 81 97 73</div>
+                <a href="mailto:mmassoni27@gmail.com" class="btn-action">M'envoyer un message</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        © 2026 Mathias Massoni | Portfolio SIO SLAM
+    </footer>
+
+</body>
+</html>
