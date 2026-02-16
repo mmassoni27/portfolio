@@ -3,169 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veille Technologique | Mathias Massoni</title>
+    <title>Veille Technologique | Mathias Massoni - BTS SIO</title>
     <style>
         :root {
-            --grad-blue: linear-gradient(90deg, #0d0d0d 0%, #1a237e 50%, #3949ab 100%);
+            --grad-blue: linear-gradient(135deg, #050a30 0%, #000c66 50%, #0000ff 100%);
             --orange-tech: #ff6600; 
-            --text-dark: #1a1a1a;
+            --text-dark: #2d3436;
             --text-light: #ffffff;
-            --bg-body: #e9ecef;
+            --bg-body: #f4f7f6;
             --bg-section: #ffffff;
+            --accent-soft: #eef2ff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-body);
             color: var(--text-dark);
-            line-height: 1.8;
+            line-height: 1.7;
         }
 
         header {
             background: var(--grad-blue);
             color: white;
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
-            border-bottom: 4px solid var(--orange-tech);
+            border-bottom: 5px solid var(--orange-tech);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .container { max-width: 1100px; margin: -40px auto 40px; padding: 0 20px; }
 
         .article {
             background: var(--bg-section);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 50px;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            margin-bottom: 60px;
+            border: 1px solid #eee;
         }
 
-        h1 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 10px; }
-        h2 { color: #1a237e; border-bottom: 2px solid var(--orange-tech); display: inline-block; margin-bottom: 25px; padding-bottom: 5px; }
-        h3 { color: #3949ab; margin-top: 30px; margin-bottom: 15px; }
+        h1 { font-size: 3rem; letter-spacing: 1px; margin-bottom: 15px; }
+        h2 { 
+            color: #000c66; 
+            font-size: 1.8rem;
+            border-left: 6px solid var(--orange-tech); 
+            padding-left: 15px;
+            margin-bottom: 30px; 
+        }
+        h3 { 
+            color: #3949ab; 
+            margin-top: 35px; 
+            margin-bottom: 15px; 
+            display: flex;
+            align-items: center;
+        }
+        h3::before { content: "▹"; margin-right: 10px; color: var(--orange-tech); }
 
         .date-badge {
             background: var(--orange-tech);
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
             display: inline-block;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(255, 102, 0, 0.2);
         }
 
-        .img-box { text-align: center; margin: 30px 0; }
-        .img-box img { width: 100%; max-width: 700px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        .img-caption { font-size: 0.9rem; color: #666; margin-top: 10px; font-style: italic; }
+        .img-box { text-align: center; margin: 40px 0; background: #fafafa; padding: 20px; border-radius: 15px; }
+        .img-box img { width: 100%; max-width: 750px; border-radius: 8px; filter: grayscale(10%) contrast(1.1); transition: 0.4s; }
+        .img-box img:hover { filter: grayscale(0%) contrast(1.2); transform: scale(1.01); }
+        .img-caption { font-size: 0.95rem; color: #7f8c8d; margin-top: 15px; font-style: italic; }
+
+        .tech-card {
+            background: var(--accent-soft);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
 
         .highlight-box {
-            background: #f0f2ff;
-            border-left: 5px solid #1a237e;
-            padding: 20px;
-            margin: 25px 0;
+            background: #fff8f1;
+            border-left: 5px solid var(--orange-tech);
+            padding: 25px;
+            margin: 30px 0;
             font-style: italic;
+            color: #444;
+            font-size: 1.1rem;
         }
 
+        ul { margin-left: 25px; margin-bottom: 20px; }
+        li { margin-bottom: 10px; }
+        strong { color: #000c66; }
+
         .source-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #1a237e;
-            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 25px;
+            color: #ffffff;
+            background: #000c66;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
             text-decoration: none;
-            transition: 0.3s;
+            transition: all 0.3s;
         }
-        .source-link:hover { color: var(--orange-tech); text-decoration: underline; }
+        .source-link:hover { background: var(--orange-tech); transform: translateY(-2px); }
 
         .back-btn {
             display: inline-block;
-            margin-bottom: 20px;
-            color: white;
+            margin-bottom: 30px;
+            color: #ffffff;
             text-decoration: none;
-            font-weight: bold;
-            background: #333;
-            padding: 10px 20px;
-            border-radius: 5px;
+            font-weight: 600;
+            background: rgba(255,255,255,0.15);
+            padding: 12px 25px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
             transition: 0.3s;
         }
-        .back-btn:hover { background: var(--orange-tech); }
+        .back-btn:hover { background: var(--orange-tech); border-color: var(--orange-tech); }
 
-        footer { text-align: center; padding: 40px; color: #666; }
+        footer { 
+            text-align: center; 
+            padding: 60px 20px; 
+            background: #050a30; 
+            color: #bdc3c7; 
+            margin-top: 50px;
+        }
+
+        .tag-sio {
+            display: inline-block;
+            background: #e1f5fe;
+            color: #0288d1;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="back-btn">← Retour au Portfolio</a>
-        <h1>Mes Veilles Technologiques</h1>
-        <p>Analyse des innovations numériques dans le football moderne</p>
+        <h1>Veille Technologique</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">L'innovation numérique au service de la performance sportive</p>
     </header>
 
     <div class="container">
 
         <article class="article">
             <span class="date-badge">Mis à jour le 28 Janvier 2026</span>
+            <div class="tag-sio">Thématique : IoT & Temps Réel</div>
             <h2>1. Le Hors-jeu Semi-Automatisé (SAOT)</h2>
             
-            <p>Le football de haut niveau a franchi une étape historique avec l'introduction du <strong>SAOT (Semi-Automated Offside Technology)</strong>. Cette technologie vise à éliminer les erreurs humaines et à réduire drastiquement le temps d'attente lié aux décisions de la VAR.</p>
+            <p>Le football de haut niveau a franchi une étape historique avec l'introduction du <strong>SAOT (Semi-Automated Offside Technology)</strong>. Cette technologie vise à éliminer l'incertitude humaine et à optimiser les délais de décision, transformant l'arbitrage en un processus hybride "IA-Homme".</p>
 
-            <h3>Comment ça marche ?</h3>
-            <p>Le système repose sur deux piliers technologiques majeurs :</p>
+            <h3>Fonctionnement du Système</h3>
+            <p>L'infrastructure repose sur un écosystème de capteurs et de vision par ordinateur (Computer Vision) hautement sophistiqué :</p>
             <ul>
-                <li><strong>Tracking Optique :</strong> 12 caméras spécialisées installées sous le toit du stade suivent 29 points de données sur le corps de chaque joueur, 50 fois par seconde.</li>
-                <li><strong>Capteur Connecté :</strong> Une puce (capteur IMU) placée au centre du ballon transmet des données 500 fois par seconde pour détecter le moment exact de l'impact lors d'une passe.</li>
+                <li><strong>Tracking Optique Multipoint :</strong> 12 caméras spécialisées sous le toit du stade effectuent un suivi de 29 points morphologiques par joueur. Ces données sont capturées 50 fois par seconde pour modéliser le squelette des joueurs en temps réel.</li>
+                <li><strong>Capteur Connecté (IMU) :</strong> Une puce placée au centre du ballon transmet des données cinétiques à une fréquence de 500 Hz (500 fois par seconde), permettant d'identifier l'instant précis du contact (le "point de passe") avec une précision millimétrique.</li>
             </ul>
 
             <div class="img-box">
                 <img src="https://cdn.ohmyfootball.com/mediafiles/uploads/posts/saot-system.webp" alt="Schéma SAOT">
-                <p class="hj.jpg">Visualisation 3D générée par l'IA pour l'arbitrage.</p>
+                <p class="img-caption">Figure 1 : Reconstitution 3D générée automatiquement pour validation arbitrale.</p>
             </div>
 
             <div class="highlight-box">
-                "L'objectif n'est pas de remplacer l'arbitre, mais de lui fournir une information ultra-précise en moins de 25 secondes, contre 70 secondes auparavant."
+                "La technologie ne remplace pas le juge de touche, elle lui offre une vision augmentée. Le temps moyen de décision est passé de 70 à 25 secondes, préservant ainsi le rythme du spectacle."
             </div>
 
-            <p><strong>Enjeux pour mon BTS SIO :</strong> Ce sujet illustre parfaitement l'importance de l'<strong>IoT (Internet des Objets)</strong> et du traitement de données en temps réel (Big Data). La synchronisation entre le ballon et les caméras nécessite des algorithmes de calcul extrêmement puissants.</p>
+            <div class="tech-card">
+                <strong>💡 Analyse Technique (BTS SIO) :</strong> 
+                <p>Ce cas d'usage illustre la convergence entre l'<strong>Internet des Objets (IoT)</strong> et le <strong>Edge Computing</strong>. Le traitement de flux de données massifs (12 flux vidéo 4K + données capteurs) nécessite des algorithmes de synchronisation temporelle parfaits (timestamping) et une puissance de calcul déportée pour éviter toute latence lors du rendu 3D.</p>
+            </div>
             
-            <a href="https://inside.fifa.com/fr/innovation/world-cup-2022/semi-automated-offside-technology" target="_blank" class="source-link">En savoir plus sur la source FIFA ↗</a>
+            <a href="https://inside.fifa.com/fr/innovation/world-cup-2022/semi-automated-offside-technology" target="_blank" class="source-link">Consulter le dossier technique FIFA ↗</a>
         </article>
+
 
         <article class="article">
             <span class="date-badge">Mis à jour le 15 Janvier 2026</span>
+            <div class="tag-sio">Thématique : Big Data & Algorithmique</div>
             <h2>2. Big Data & Recrutement : Le modèle OM</h2>
             
-            <p>Le football n'est plus seulement une question d'instinct. À l'<strong>Olympique de Marseille</strong>, la data est devenue un outil de décision stratégique, notamment sous l'impulsion de Pablo Longoria.</p>
+            <p>Sous la direction de Pablo Longoria, l'<strong>Olympique de Marseille</strong> a intégré l'analyse de données massives (Big Data) au cœur de sa stratégie de recrutement. Le but est de réduire la part d'aléa financier lors du mercato.</p>
 
-            <h3>Le Scouting 2.0</h3>
-            <p>Grâce à des plateformes comme <strong>StatsBomb</strong> ou <strong>TransferRoom</strong>, le club peut analyser des milliers de joueurs à travers le monde sans même envoyer un observateur sur place dans un premier temps. On cherche des profils mathématiques.</p>
+            <h3>Le Scouting 2.0 : Du terrain au Dashboard</h3>
+            <p>Grâce à des partenaires comme <strong>StatsBomb</strong>, les recruteurs utilisent le "Filtering Data" pour identifier des talents spécifiques. On ne cherche plus seulement un "bon joueur", mais une réponse statistique à un besoin tactique.</p>
 
             <div class="img-box">
                 <img src="https://www.coeurmarseillais.fr/om-la-cellule-de-recrutement-se-renforce/" alt="Pablo Longoria OM">
-                <p class="">La stratégie de l'OM repose sur l'analyse de données massives.</p>
+                <p class="img-caption">Figure 2 : La cellule de recrutement de l'OM utilise des indicateurs de performance avancés.</p>
             </div>
 
-            <h3>Les indicateurs clés (KPIs)</h3>
-            <p>Les analystes de l'OM ne regardent pas seulement les buts. Ils scrutent :</p>
+            <h3>Indicateurs Clés de Performance (KPIs)</h3>
             <ul>
-                <li><strong>xG (Expected Goals) :</strong> La probabilité qu'un tir devienne un but.</li>
-                <li><strong>Passes progressives :</strong> La capacité d'un milieu à casser les lignes par la passe.</li>
-                <li><strong>Intensité de pressing :</strong> Le nombre d'actions défensives déclenchées dans les 2 secondes après une perte de balle.</li>
+                <li><strong>Expected Goals (xG) & Assists (xA) :</strong> Mesure de la qualité des occasions créées plutôt que le simple résultat final.</li>
+                <li><strong>Progressive Runs/Passes :</strong> Capacité algorithmique à mesurer l'impact vertical d'un joueur.</li>
+                <li><strong>PPDA (Passes Per Defensive Action) :</strong> Indicateur d'intensité du pressing exercé sur l'adversaire.</li>
             </ul>
 
-            <div class="highlight-box">
-                En utilisant le Big Data, l'OM peut trouver des joueurs sous-évalués dans des championnats mineurs et les revendre avec une forte plus-value après une saison réussie.
+            <div class="tech-card">
+                <strong>💻 Analyse Technique (BTS SIO - SLAM) :</strong> 
+                <p>L'enjeu ici est l'exploitation de <strong>bases de données NoSQL</strong> (pour la flexibilité des types de données sportives) et l'utilisation de langages comme <strong>Python (bibliothèques Pandas, Scikit-learn)</strong> pour le nettoyage et la modélisation des données. C'est une application directe de l'aide à la décision par le développement logiciel.</p>
             </div>
 
-            <p><strong>Lien avec le SLAM :</strong> En tant qu'étudiant en développement, ce sujet m'intéresse car il montre comment les bases de données (SQL) et les algorithmes de filtrage transforment une industrie comme le sport professionnel.</p>
+            <div class="highlight-box">
+                En exploitant ces données, un club peut détecter des "pépites" dans des championnats de second rang (Eredivisie, Liga Portugal) avant que leur valeur marchande n'explose sur le marché européen.
+            </div>
 
-            <a href="https://www.leparisien.fr/sports/football/mercato-comment-lia-va-revolutionner-le-recrutement-des-joueurs-de-football-27-08-2024-DWN2QVBCBNAWZGJHBCQRTMDBNY.php" target="_blank" class="source-link">Source : Le parisien↗</a>
+            <a href="https://www.leparisien.fr/sports/football/mercato-comment-lia-va-revolutionner-le-recrutement-des-joueurs-de-football-27-08-2024-DWN2QVBCBNAWZGJHBCQRTMDBNY.php" target="_blank" class="source-link">Source : Article Le Parisien ↗</a>
         </article>
 
     </div>
 
     <footer>
-        <p>© 2026 Mathias Massoni | Veille Technologique BTS SIO SLAM</p>
-        <p>Sujets : IoT, Big Data, Algorithmique.</p>
+        <p><strong>© 2026 Mathias Massoni</strong> | Veille Technologique - BTS SIO Option SLAM</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">Technologies surveillées : Intelligence Artificielle, IoT, Big Data, Cloud Computing.</p>
     </footer>
 
 </body>
