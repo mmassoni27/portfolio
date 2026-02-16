@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veille Technologique | Mathias Massoni - BTS SIO</title>
+    <title>Veille Technologique | Mathias Massoni - SAOT</title>
     <style>
         :root {
             --grad-blue: linear-gradient(135deg, #050a30 0%, #1a237e 50%, #3949ab 100%);
             --orange-tech: #ff6600; 
             --text-dark: #1a1a1a;
             --text-light: #ffffff;
-            --bg-body: #f8f9fa;
+            --bg-body: #f1f3f5;
             --bg-section: #ffffff;
             --accent-blue: #eef2ff;
         }
@@ -26,198 +26,195 @@
         header {
             background: var(--grad-blue);
             color: white;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
             border-bottom: 5px solid var(--orange-tech);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
-        .container { max-width: 1100px; margin: -50px auto 50px; padding: 0 20px; }
+        .container { max-width: 1000px; margin: -60px auto 60px; padding: 0 20px; }
 
         .article {
             background: var(--bg-section);
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            margin-bottom: 60px;
-            border: 1px solid #ddd;
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
         }
 
-        h1 { font-size: 3rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 2px; }
+        h1 { font-size: 2.8rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
         h2 { 
             color: #1a237e; 
-            font-size: 1.8rem;
-            border-bottom: 3px solid var(--orange-tech); 
-            display: inline-block; 
-            margin-bottom: 30px; 
-            padding-bottom: 5px; 
+            font-size: 2.2rem;
+            margin-bottom: 35px; 
+            padding-bottom: 10px;
+            border-bottom: 4px solid var(--orange-tech);
+            display: inline-block;
         }
-        h3 { color: #3949ab; margin-top: 35px; margin-bottom: 15px; font-size: 1.4rem; }
+        h3 { 
+            color: #3949ab; 
+            margin-top: 45px; 
+            margin-bottom: 20px; 
+            font-size: 1.6rem; 
+            display: flex;
+            align-items: center;
+        }
+        h3::before { content: "●"; color: var(--orange-tech); margin-right: 15px; font-size: 1.2rem; }
 
         .date-badge {
             background: var(--orange-tech);
             color: white;
-            padding: 8px 20px;
+            padding: 8px 25px;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 8px rgba(255,102,0,0.3);
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(255,102,0,0.2);
         }
 
-        .img-box { text-align: center; margin: 40px 0; background: #fdfdfd; padding: 15px; border-radius: 12px; }
-        .img-box img { width: 100%; max-width: 750px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .img-box { text-align: center; margin: 50px 0; background: #fafafa; padding: 25px; border-radius: 20px; border: 1px solid #eee; }
+        .img-box img { width: 100%; max-width: 800px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
         
-        /* Conservation de tes noms de classes spécifiques pour les légendes */
-        .hj.jpg, .img-caption { 
-            font-size: 0.95rem; 
-            color: #555; 
-            margin-top: 15px; 
+        .hj.jpg { 
+            font-size: 1rem; 
+            color: #666; 
+            margin-top: 20px; 
             font-style: italic; 
             display: block;
         }
 
         .tech-focus {
             background: var(--accent-blue);
-            border-left: 6px solid #1a237e;
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 0 10px 10px 0;
+            border-left: 8px solid #1a237e;
+            padding: 35px;
+            margin: 40px 0;
+            border-radius: 0 20px 20px 0;
+            font-size: 1.05rem;
         }
 
-        .highlight-box {
-            background: #fff5eb;
-            border-left: 5px solid var(--orange-tech);
-            padding: 25px;
+        .impact-card {
+            background: #fff8f1;
+            border: 1px solid #ffe0b2;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+        }
+
+        .highlight-quote {
+            font-size: 1.2rem;
+            color: #444;
+            border-left: 4px solid var(--orange-tech);
+            padding-left: 20px;
             margin: 30px 0;
             font-style: italic;
-            font-size: 1.1rem;
         }
 
-        ul { margin-left: 25px; margin-bottom: 20px; }
-        li { margin-bottom: 12px; }
+        ul { margin-left: 30px; margin-bottom: 25px; }
+        li { margin-bottom: 15px; }
+        strong { color: #1a237e; }
 
         .source-link {
-            display: inline-block;
-            margin-top: 30px;
-            color: #1a237e;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 40px;
+            color: white;
+            background: #1a237e;
+            padding: 15px 35px;
+            border-radius: 50px;
             font-weight: bold;
             text-decoration: none;
-            border: 2px solid #1a237e;
-            padding: 10px 25px;
-            border-radius: 8px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
         }
         .source-link:hover { 
-            background: #1a237e; 
-            color: white; 
-            transform: translateY(-3px);
+            background: var(--orange-tech); 
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.4);
         }
 
         .back-btn {
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             color: white;
             text-decoration: none;
             font-weight: bold;
-            background: rgba(0,0,0,0.3);
-            padding: 12px 25px;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.4);
+            background: rgba(255,255,255,0.2);
+            padding: 12px 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
             transition: 0.3s;
         }
-        .back-btn:hover { background: var(--orange-tech); border-color: var(--orange-tech); }
+        .back-btn:hover { background: var(--orange-tech); }
 
-        footer { 
-            text-align: center; 
-            padding: 60px 20px; 
-            background: #0d0d0d; 
-            color: #aaa; 
-        }
+        footer { text-align: center; padding: 80px 20px; background: #050a30; color: #9da1b4; }
     </style>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="back-btn">← Retour au Portfolio</a>
-        <h1>Mes Veilles Technologiques</h1>
-        <p style="font-size: 1.3rem; opacity: 0.9;">Innovation, Big Data et IoT dans l'écosystème du Football</p>
+        <h1>Veille Technologique Avancée</h1>
+        <p style="font-size: 1.4rem; opacity: 0.9;">L'IA et l'IoT redéfinissent les limites de l'arbitrage sportif</p>
     </header>
 
     <div class="container">
 
         <article class="article">
-            <span class="date-badge">Mis à jour le 28 Janvier 2026</span>
-            <h2>1. Le Hors-jeu Semi-Automatisé (SAOT)</h2>
+            <span class="date-badge">Dossier Spécial - 28 Janvier 2026</span>
+            <h2>La Technologie de Hors-jeu Semi-Automatisé (SAOT)</h2>
             
-            <p>L'introduction de la <strong>Semi-Automated Offside Technology (SAOT)</strong> représente une révolution majeure dans l'arbitrage sportif. Cette innovation vise à résoudre le problème de la parallaxe et du temps de décision humain lors de phases de jeu ultra-rapides.</p>
+            <p>Le football moderne ne se joue plus seulement sur le gazon, mais aussi dans des centres de données capables d'analyser des flux massifs en millisecondes. La <strong>Semi-Automated Offside Technology (SAOT)</strong> est l'innovation la plus disruptive de ces dernières années, transformant une décision subjective en une donnée scientifique indiscutable.</p>
 
-            <h3>Architecture Technologique</h3>
-            <p>Le système repose sur une fusion de données provenant de sources hétérogènes :</p>
+            <h3>Une Architecture Matérielle de Haute Précision</h3>
+            <p>Le système SAOT n'est pas une simple amélioration de la vidéo. C'est un écosystème complexe qui repose sur une synchronisation parfaite entre deux types de captations de données :</p>
             <ul>
-                <li><strong>Système de Tracking Optique :</strong> Un réseau de 12 caméras haute résolution suit 29 points de données sur le corps de chaque joueur, créant un squelette numérique en 3D calculé 50 fois par seconde.</li>
-                <li><strong>Capteur Inertiel (IMU) :</strong> Une puce placée dans le ballon transmet sa position et l'accélération à une fréquence de 500 Hz, permettant de définir l'instant T de la passe avec une précision chirurgicale.</li>
+                <li><strong>Tracking Optique Intelligent :</strong> 12 caméras spécialisées, positionnées stratégiquement sous le toit du stade, suivent en permanence 29 points de données par joueur (articulations, extrémités, membres). Ce "maillage" numérique permet de reconstruire le corps de chaque joueur en 3D, 50 fois par seconde.</li>
+                <li><strong>Le Ballon Connecté (Connected Ball Technology) :</strong> Le ballon officiel intègre un capteur <strong>IMU (Inertial Measurement Unit)</strong>. Cette puce, suspendue au centre de la sphère, envoie des données de position et d'accélération 500 fois par seconde (500 Hz) à une antenne locale, permettant de détecter l'impact précis d'une passe avec une latence quasi nulle.</li>
             </ul>
 
             <div class="img-box">
                 <img src="https://cdn.ohmyfootball.com/mediafiles/uploads/posts/saot-system.webp" alt="Schéma SAOT">
                 <p class="hj.jpg">Visualisation 3D générée par l'IA pour l'arbitrage.</p>
             </div>
-
-            <div class="tech-focus">
-                <strong>Analyse pour le BTS SIO :</strong> Ce dispositif est une application concrète de l'<strong>IoT (Internet des Objets)</strong> et du traitement de flux de données massifs en temps réel. La synchronisation entre les flux vidéo et les données télémétriques du ballon nécessite des protocoles réseau à très faible latence.
-            </div>
-
-            <div class="highlight-box">
-                "L'objectif est d'aider les arbitres VAR à prendre des décisions plus rapides et plus précises. Le temps moyen d'analyse est réduit de 70 secondes à environ 25 secondes."
-            </div>
-
-            <a href="https://inside.fifa.com/fr/innovation/world-cup-2022/semi-automated-offside-technology" target="_blank" class="source-link">Source officielle FIFA ↗</a>
-        </article>
-
-
-        <article class="article">
-            <span class="date-badge">Mis à jour le 15 Janvier 2026</span>
-            <h2>2. Big Data & Recrutement : Le modèle OM</h2>
             
-            <p>Le football moderne est devenu une industrie pilotée par les données. À l'<strong>Olympique de Marseille</strong>, sous l'ère de Pablo Longoria, la data science est utilisée pour identifier des talents sous-évalués et optimiser les investissements financiers du club.</p>
 
-            <h3>La Digitalisation du Scouting</h3>
-            <p>Le club utilise des algorithmes de filtrage avancés pour passer au crible des bases de données mondiales (StatsBomb, TransferRoom) contenant les statistiques de plus de 150 000 joueurs.</p>
-
-            <div class="img-box">
-                <img src="https://www.coeurmarseillais.fr/om-la-cellule-de-recrutement-se-renforce/" alt="Pablo Longoria OM">
-                <p class="">La stratégie de l'OM repose sur l'analyse de données massives.</p>
+            <h3>Pourquoi c'est une révolution pour le football ?</h3>
+            <div class="impact-card">
+                <p><strong>1. La fin des interruptions interminables :</strong> Auparavant, un hors-jeu litigieux à la VAR pouvait prendre plus de 2 minutes. Avec le SAOT, l'alerte est envoyée aux arbitres vidéo en quelques secondes. On passe d'une moyenne de 70 secondes de vérification à environ 20-25 secondes.</p>
+            </div>
+            <div class="impact-card">
+                <p><strong>2. Transparence et Immersion :</strong> Le système génère automatiquement une animation 3D montrant précisément la position des joueurs. Cette animation est diffusée sur les écrans géants et à la télévision, permettant aux fans de comprendre immédiatement la décision, là où les anciennes lignes tracées manuellement créaient du doute.</p>
+            </div>
+            <div class="impact-card">
+                <p><strong>3. Équité Sportive Absolue :</strong> La technologie élimine l'erreur humaine liée à la parallaxe ou au moment exact où le ballon quitte le pied du passeur. C'est une application du "zéro erreur" au sport de haut niveau.</p>
             </div>
 
-            <h3>Indicateurs Clés de Performance (KPIs)</h3>
-            <p>Les développeurs et data analysts travaillent sur des métriques complexes :</p>
-            <ul>
-                <li><strong>xG (Expected Goals) :</strong> Algorithme calculant la probabilité de marquer selon la position et le contexte.</li>
-                <li><strong>Packing Rate :</strong> Mesure le nombre d'adversaires éliminés par une passe ou un dribble, révélant l'efficacité verticale d'un joueur.</li>
-                <li><strong>Analyse de Similarité :</strong> Algorithme permettant de trouver un remplaçant dont les statistiques sont proches d'un joueur partant.</li>
-            </ul>
-
+            <h3>L'Analyse Technique (Focus BTS SIO)</h3>
             <div class="tech-focus">
-                <strong>Lien avec le parcours SLAM :</strong> Ce sujet démontre l'importance de la maîtrise des <strong>systèmes de gestion de bases de données (SGBD)</strong> et de l'algorithmique. En tant que futur développeur, comprendre comment transformer des données brutes en indicateurs stratégiques est une compétence clé.
+                <strong>Ingénierie des données et IA :</strong> 
+                <p>Pour un étudiant en informatique, le SAOT est un cas d'école de <strong>Edge Computing</strong>. Les flux vidéo 4K et les données du capteur IMU doivent être fusionnés et analysés localement dans le stade pour garantir un temps de réponse instantané. L'intelligence artificielle intervient dans la reconnaissance automatique des membres des joueurs (Computer Vision) et dans le déclenchement de l'alerte automatique de hors-jeu, qui doit être validée par un humain avant d'être transmise à l'arbitre central.</p>
             </div>
 
-            <div class="highlight-box">
-                Grâce au Big Data, l'OM peut minimiser les risques d'erreur de casting et maximiser les chances de plus-value lors des reventes, garantissant ainsi une pérennité économique.
+            <div class="highlight-quote">
+                "Ce système est l'aboutissement de trois années de recherche et de tests. Il ne s'agit pas de robotiser le football, mais de donner aux arbitres des outils à la hauteur de la vitesse du jeu moderne."
             </div>
 
-            <a href="https://www.leparisien.fr/sports/football/mercato-comment-lia-va-revolutionner-le-recrutement-des-joueurs-de-football-27-08-2024-DWN2QVBCBNAWZGJHBCQRTMDBNY.php" target="_blank" class="source-link">Source : Le Parisien ↗</a>
+            <p><strong>En conclusion</strong>, le SAOT préfigure ce que sera le sport du futur : une alliance entre la performance athlétique et la puissance de calcul. Pour le développeur SIO, cela illustre l'importance cruciale de la gestion des données en temps réel et de la fiabilité logicielle dans des environnements critiques.</p>
+
+            <a href="https://inside.fifa.com/fr/innovation/world-cup-2022/semi-automated-offside-technology" target="_blank" class="source-link">Source Technique : Dossier Innovation FIFA ↗</a>
         </article>
 
     </div>
 
     <footer>
-        <p>© 2026 Mathias Massoni | Veille Technologique BTS SIO SLAM</p>
-        <p style="margin-top: 10px; font-size: 0.9rem;">Thématiques : IoT, Intelligence Artificielle, Big Data.</p>
+        <p><strong>Mathias Massoni</strong> - Veille Technologique 2026</p>
+        <p style="margin-top: 10px; font-size: 0.85rem;">BTS SIO - Services Informatiques aux Organisations</p>
     </footer>
 
 </body>
 </html>
+
 
 
